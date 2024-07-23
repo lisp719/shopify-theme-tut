@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: shopify theme dev --host 0
+    env_file: .env
+    ports:
+      - 9292:9292
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
